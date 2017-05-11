@@ -1,49 +1,23 @@
-import java.util.Scanner;
-
 /**
  * Author: Eduardo Pozo
- * Date Created: 5/8/2017
- * Last Updated: 5/8/2017
- * Purpose: Create a simple calculator.
- * Improvements that can be made: Add try/catch statements to prevent wrong user input, or validate user input.
+ * Created on: 5/10/2017
+ * Last modified: 5/10/2017
+ * Purpose: Exercise
+ * Write a program that prints the numbers from 1 to 100. but for multiples of three print "Fizz" instead of the number
+ * and for the multiples of five print "Buzz". For numbers which are multiples of both three and fizz print FizBuzz"
  */
 public class main {
-
     public static void main(String[] args) {
-        //Declare argument variables
-        double argumentOne;
-        double argumentTwo;
-        double result = 0;
-        String operator;
-
-        String[] operatorList = {"+", "-", "*", "/", "%"};
-        Scanner readInput = new Scanner(System.in);
-
-
-        System.out.println("Welcome to my basic calculator program. \n I only support addition, subtraction," +
-                            " integer multiplication, and integer division");
-        System.out.println("Please enter integer one.");
-        argumentOne = readInput.nextInt();
-        System.out.println("Please enter intger two.");
-        argumentTwo = readInput.nextInt();
-        System.out.println("Lastly, enter the operator you would like to utilize.");
-        operator = readInput.next();
-
-        //Find operator, perform operation
-        switch(operator) {
-            case "+":   result = argumentOne + argumentTwo;
-                        break;
-            case "-":   result = argumentOne - argumentTwo;
-                        break;
-            case "*":   result = argumentOne * argumentTwo;
-                        break;
-            case "/":   result = argumentOne / argumentTwo;
-                        break;
-            case "%":   result = argumentOne % argumentTwo;
-                        break;
-            default:    System.out.println("Invalid format");
+        //for loop, check with mod, first test for FizzBuz, otherwise check for others.
+        for(int counter = 1; counter <= 100; counter ++) {
+            if(counter % 3 == 0 && counter % 5 == 0)
+                System.out.println("FizzBuzz");
+            else if(counter % 5 == 0)
+                System.out.println("Buzz");
+            else if(counter % 3 == 0)
+                System.out.println("Fizz");
+            else
+                System.out.println(counter);
         }
-        System.out.println(result);
     }
-
 }
